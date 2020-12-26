@@ -6,7 +6,7 @@ idna==2.8
 MouseInfo==0.0.4
 parse==1.18.0
 parse-type==0.5.2
-Pillow==6.2.0
+Pillow==7.1.0
 PyAutoGUI==0.9.47
 PyGetWindow==0.0.7
 PyMsgBox==1.0.7
