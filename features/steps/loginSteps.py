@@ -11,7 +11,7 @@ from selenium.webdriver.support.ui import WebDriverWait as wait
 from decouple import config
 import logging
 import time
-import pyautogui
+#import pyautogui
 from selenium.webdriver.chrome.options import Options
 
 chrome_options = Options()
