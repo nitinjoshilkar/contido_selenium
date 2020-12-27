@@ -11,7 +11,7 @@ from selenium.webdriver.support.ui import WebDriverWait as wait
 from decouple import config
 import logging
 import time
-import pyautogui
+#import pyautogui
 from selenium.webdriver.chrome.options import Options
 
 chrome_options = Options()
@@ -30,8 +30,8 @@ formatter = logging.Formatter(fmt='%(asctime)s %(levelname)-8s %(message)s',date
 console.setFormatter(formatter)
 logging.getLogger('').addHandler(console)
 logger_login= logging.getLogger('scontido_add_show.py')
-driver = webdriver.Chrome()
-#driver = webdriver.Chrome(options=chrome_options)
+#driver = webdriver.Chrome()
+driver = webdriver.Chrome(options=chrome_options)
 # options=chrome_options
 
 
@@ -56,13 +56,13 @@ def openUrl(context):
 def EnterCredentials(context):
     username = driver.find_element_by_xpath('/html/body/div[1]/div/div/div[2]/div/div[1]/div/div/div/form/div[1]/input')
     username.clear()
- #   username.send_keys(config('operation_user'))
+#   username.send_keys(config('operation_user'))
     username.send_keys('opsuser@desynova.com')
     logger_login.info("username entered")
     # time.sleep(2)
     password = driver.find_element_by_xpath('/html/body/div[1]/div/div/div[2]/div/div[1]/div/div/div/form/div[2]/input')
     password.clear()
- #   password.send_keys('config('operation_password')')
+#   password.send_keys('config('operation_password')')
     password.send_keys('dyn@opsuser20')
     logger_login.info("password entered")
 
@@ -71,6 +71,7 @@ def EnterCredentials(context):
 def Login(context):
     login = driver.find_element_by_xpath('/html/body/div[1]/div/div/div[2]/div/div[1]/div/div/button')
     login.click()
+    logger_login.info("login successfull")
 
 
 # time.sleep(4)
@@ -92,7 +93,7 @@ def Logout(context):
 
 @then('close browser')
 def CloseBrowser(context):
-    logger_login.info("login successfully")
+    logger_login.info("browser closed")
     time.sleep(4)
     driver.close()
     driver.quit()
