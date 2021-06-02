@@ -20,7 +20,7 @@ requests==2.22.0
 selenium==3.141.0
 six==1.15.0
 soupsieve==1.9.4
-urllib3==1.25.6
+urllib3==1.26.5
 zerosms==0.0.1
 allure-behave==2.8.29
 allure-python-commons==2.8.29
